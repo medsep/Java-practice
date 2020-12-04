@@ -13,9 +13,19 @@ public class OnTheList {
             if (input.equals("")) {
                 break;
             }
-
             list.add(input);
         }
-
-    }
-}
+        
+        System.out.println("Search for? " );
+        String input1 = scanner.next();
+        
+        boolean found = list.contains(input1);
+        if (found){
+                System.out.println(input1 +" was found!");
+            }
+        else{
+                System.out.println(input1 + " was not found!");
+            }
+        }
+    }      
+     
