@@ -12,5 +12,25 @@ public class MainProgram {
         // correct order in the main program. First the object that tracks the total
         // sum, secondly the object that tracks the sum of even numbers, 
         // and lastly the one that tracks the sum of odd numbers!
+        Statistics stats = new Statistics();
+        Statistics odd = new Statistics();
+        Statistics even = new Statistics();
+        
+        System.out.println("Enter numbers: ");
+        int input=0;
+        while(input>-1){
+            input = Integer.parseInt(scanner.nextLine());
+            if (input%2==0 && input>0){
+                even.sum();
+                stats.sum();
+            }else if (input%2!=0 && input>0){
+                odd.sum();
+                stats.sum();
+            }
+        }
+        System.out.println("Sum: " + stats.sum());
+        System.out.println("Sum of even numbers: " + even.sum());
+        System.out.println("Sum of odd numbers: " + odd.sum());
+        System.out.println("Average of numbers: " + stats.average());
     }
 }

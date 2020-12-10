@@ -1,5 +1,6 @@
 
 import java.nio.file.Paths;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class NumbersFromAFile {
@@ -13,7 +14,29 @@ public class NumbersFromAFile {
         int lowerBound = Integer.valueOf(scanner.nextLine());
         System.out.print("Upper bound? ");
         int upperBound = Integer.valueOf(scanner.nextLine());
-
+        ArrayList<Integer> lines = new ArrayList<>();
+        int count = 0;
+        
+        try (Scanner scanner1 = new Scanner(Paths.get(file))) {
+            
+            while(scanner1.hasNextInt()) {
+                lines.add(scanner1.nextInt());
     }
-
-}
+        
+                      
+        }catch (Exception e) {
+        System.out.println("Reading the file nonexistent.txt failed.");
+    
+        }
+        
+                
+        for (int i : lines){
+            if (i>= lowerBound && i<=upperBound){
+                count+=1;
+            }
+        }
+        
+        System.out.println("Numbers: "+count);
+        
+        }   
+    }
