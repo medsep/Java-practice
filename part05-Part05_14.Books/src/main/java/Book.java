@@ -1,4 +1,3 @@
-
 public class Book {
 
     private String name;
@@ -11,6 +10,11 @@ public class Book {
 
     public String getName() {
         return name;
+    }
+
+    public boolean equals(Object compared) {
+        Book book = (Book) compared;
+        return this.name.equals(((Book) compared).name) && this.publicationYear == book.publicationYear;
     }
 
     public int getPublicationYear() {

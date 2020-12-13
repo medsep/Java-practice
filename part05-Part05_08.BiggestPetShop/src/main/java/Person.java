@@ -19,7 +19,9 @@ public class Person {
 
     @Override
     public String toString() {
-        return this.nimi;
-    }
+        //Leo, has a friend called Lucy (golden retriever)
 
+        return this.name +", has a friend called " +  pet.getName() + " (" + pet.getBreed() + ")" ;
+
+}
 }
